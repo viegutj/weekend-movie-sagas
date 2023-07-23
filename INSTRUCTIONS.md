@@ -30,7 +30,7 @@ For this weekend challenge you'll be expanding on a movie management application
 Genres can be applied to many different movies. Movies can have multiple genres. This is Many-to-Many! Junction Table time!
 
 We've given you the database complete with a junction table and data for `movies_genres`.
- 
+
 ### Movie Poster Images
 We've added some movie posters in the `public/images` folder, and the database is set up to use them. If you want your own posters, you'll want to add the files there!
 
@@ -78,7 +78,7 @@ As one of your last projects, it's possible you will be sharing this with employ
 This should show:
 
 - an input field (for the movie title)
-- an input field (for the movie poster image URL))
+- an input field (for the movie poster image URL)
 - a textarea (for the movie description)
 - a dropdown (for the genres)
 
@@ -97,6 +97,20 @@ The Add Movie page should have the buttons:
 ### 2. Refresh on Details Page
 Allow the app to maintain on refresh our details page.
 Research the [useParams](https://reactrouter.com/en/main/hooks/use-params) hook for React Router.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 3. Edit Page (Stretch)
 Add to the detail page an edit button that brings the user to the edit page.
