@@ -15,11 +15,10 @@ function Details() {
             <div>
                 <img src={details.poster} alt={details.title}/>
                 <h1>Title: {details.title}</h1>
-                <h2>Genres: 
-                    {details.genre.map((specificGenre) =>{
+                <h2>Genres:
+                    {details?.genres?.map((specificGenre) =>(
                         <li key={specificGenre}>{specificGenre}</li>
-                    })}
-
+                    ))}
                 </h2>
                 <p>Description: {details.description}</p>
                 <button onClick={() => history.replace('/')}>Back to List</button>
