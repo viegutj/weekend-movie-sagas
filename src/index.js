@@ -12,11 +12,13 @@ import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 // Create the rootSaga generator function
+    // this function handles all initial dispatches
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-    yield takeEvery('SET_DETAILS', setDetails)
+    yield takeEvery('FETCH_DETAILS', fetchDetails)
 }
 
+// generator function to send 'put' (dispatch) to reducer
 function* fetchAllMovies() {
     // get all movies from the DB
     try {
@@ -28,12 +30,15 @@ function* fetchAllMovies() {
     }
 }
 
-function* setDetails() {
+function* fetchDetails(action) {
     // set details for details component
-    try{
-        yield put({type: 'SET_DETAILS'})
-    } catch{
-        console.log('set details error');
+    try {
+        console.log('movie id: ', action.payload);
+        const movie = yield axios.get(`/api/details/${action.payload}`);
+        console.log('get all:', movie.data);
+        yield put({ type: 'SET_DETAILS', payload: movie.data });
+    } catch {
+        console.log('get details error');
     }
 }
 

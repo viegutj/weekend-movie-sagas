@@ -15,11 +15,11 @@ function MovieList() {
     }, []);
 
     const handleClick = (movie) => {
-        dispatch({
-            type: 'SET_DETAILS',
-            payload: movie
-        })
         console.log('Movie: ', movie);
+        dispatch({
+            type: 'FETCH_DETAILS',
+            payload: movie.id
+        })
         history.push('/details')
     }
 
